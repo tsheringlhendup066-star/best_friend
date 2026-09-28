@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>For My Crazy Cat Lady 🐾</title>
+    <title>For My Crazy Cat Lady 🐈‍⬛</title>
 
     <style>
 
@@ -16,217 +18,537 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: #0f1020;
+            background: #0b0b14;
             color: white;
-            min-height: 100vh;
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
-        /* MAIN SCREEN */
+
+        /* =========================
+           OPENING PAGE
+        ========================= */
 
         .hero {
-            height: 100vh;
+            min-height: 100vh;
+
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
             text-align: center;
+
             padding: 30px;
+
             position: relative;
+
+            background:
+                radial-gradient(circle at center,
+                #24213d 0%,
+                #0b0b14 65%);
         }
+
 
         .cat {
-            font-size: 70px;
-            margin-bottom: 20px;
+            font-size: 75px;
 
             opacity: 0;
-            animation: fadeIn 1.5s ease forwards,
-                       float 3s ease-in-out infinite 1.5s;
+
+            animation:
+                fadeIn 1.5s ease forwards,
+                floating 3s ease-in-out infinite 1.5s;
         }
 
-        h1 {
+
+        .hero h1 {
+
             font-size: 55px;
-            margin-bottom: 20px;
+
+            margin-top: 20px;
+            margin-bottom: 15px;
 
             opacity: 0;
-            animation: titleAppear 2s ease forwards 1s;
+
+            animation:
+                titleAppear 1.5s ease forwards 1s;
         }
 
-        h1 span {
+
+        .hero h1 span {
+
             display: block;
-            font-size: 28px;
-            margin-top: 12px;
+
+            font-size: 24px;
+
             font-weight: normal;
-            opacity: 0.8;
+
+            margin-top: 15px;
+
+            opacity: 0.7;
         }
+
 
         .intro {
+
             max-width: 650px;
-            font-size: 19px;
-            line-height: 1.7;
+
+            font-size: 18px;
+
+            line-height: 1.8;
 
             opacity: 0;
-            animation: fadeIn 2s ease forwards 2.5s;
+
+            animation:
+                fadeIn 2s ease forwards 2.5s;
         }
 
+
         .start-btn {
+
             margin-top: 35px;
+
             padding: 15px 32px;
 
             border: none;
+
             border-radius: 30px;
 
+            background: white;
+
+            color: #111;
+
             font-size: 16px;
+
             cursor: pointer;
 
-            background: white;
-            color: #0f1020;
-
             opacity: 0;
-            animation: fadeIn 2s ease forwards 4s;
+
+            animation:
+                fadeIn 2s ease forwards 4s;
 
             transition: 0.3s;
         }
 
+
         .start-btn:hover {
-            transform: scale(1.1);
+
+            transform: scale(1.08);
+
+            box-shadow:
+                0 10px 30px rgba(255,255,255,0.2);
         }
 
 
-        /* FLOATING PAW PRINTS */
+        /* =========================
+           FLOATING PAWS
+        ========================= */
 
         .paw {
+
             position: absolute;
+
             font-size: 28px;
+
             opacity: 0;
 
-            animation: pawFloat linear infinite;
+            animation:
+                pawFloat linear infinite;
         }
 
+
         .paw:nth-child(1) {
+
             left: 10%;
-            animation-duration: 8s;
+
+            animation-duration: 9s;
+
             animation-delay: 1s;
         }
 
+
         .paw:nth-child(2) {
+
             left: 25%;
-            animation-duration: 10s;
+
+            animation-duration: 11s;
+
             animation-delay: 3s;
         }
 
+
         .paw:nth-child(3) {
+
             left: 45%;
-            animation-duration: 7s;
+
+            animation-duration: 8s;
+
             animation-delay: 0s;
         }
 
+
         .paw:nth-child(4) {
+
             left: 65%;
-            animation-duration: 11s;
+
+            animation-duration: 10s;
+
             animation-delay: 2s;
         }
 
+
         .paw:nth-child(5) {
+
             left: 82%;
-            animation-duration: 9s;
+
+            animation-duration: 12s;
+
             animation-delay: 4s;
         }
 
 
-        /* ANIMATIONS */
+        /* =========================
+           CRAZY CAT LADY REPORT
+        ========================= */
+
+        .report {
+
+            min-height: 100vh;
+
+            display: none;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 40px 20px;
+
+            background:
+                radial-gradient(circle at center,
+                #292641 0%,
+                #0b0b14 70%);
+        }
+
+
+        .report-box {
+
+            width: 100%;
+
+            max-width: 900px;
+
+            padding: 50px 30px;
+
+            border-radius: 25px;
+
+            background:
+                rgba(255,255,255,0.05);
+
+            border:
+                1px solid rgba(255,255,255,0.12);
+
+            box-shadow:
+                0 20px 70px rgba(0,0,0,0.5);
+
+            animation:
+                reportAppear 1s ease;
+        }
+
+
+        .report-icon {
+
+            font-size: 60px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .report h2 {
+
+            font-size: 15px;
+
+            letter-spacing: 5px;
+
+            opacity: 0.55;
+        }
+
+
+        .report h1 {
+
+            font-size: 42px;
+
+            margin-top: 10px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .classified {
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            opacity: 0.45;
+
+            margin-bottom: 40px;
+        }
+
+
+        /* STATISTICS */
+
+        .stats {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+
+            margin-bottom: 40px;
+        }
+
+
+        .stat {
+
+            padding: 25px 12px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(255,255,255,0.06);
+
+            transition: 0.3s;
+        }
+
+
+        .stat:hover {
+
+            transform: translateY(-8px);
+
+            background:
+                rgba(255,255,255,0.1);
+        }
+
+
+        .stat span {
+
+            font-size: 32px;
+        }
+
+
+        .stat h3 {
+
+            font-size: 14px;
+
+            margin-top: 12px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .stat p {
+
+            font-size: 21px;
+
+            font-weight: bold;
+        }
+
+
+        .report-text {
+
+            max-width: 650px;
+
+            margin: auto;
+
+            line-height: 1.8;
+
+            opacity: 0.75;
+
+            font-size: 16px;
+        }
+
+
+        .result {
+
+            margin-top: 30px;
+
+            font-size: 21px;
+        }
+
+
+        .result-big {
+
+            margin-top: 15px;
+
+            font-size: 25px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
 
         @keyframes fadeIn {
 
             from {
+
                 opacity: 0;
-                transform: translateY(20px);
+
+                transform:
+                    translateY(25px);
             }
 
             to {
-                opacity: 1;
-                transform: translateY(0);
-            }
 
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
         }
+
 
         @keyframes titleAppear {
 
             from {
+
                 opacity: 0;
-                transform: scale(0.8);
+
+                transform:
+                    scale(0.8);
             }
 
             to {
-                opacity: 1;
-                transform: scale(1);
-            }
 
+                opacity: 1;
+
+                transform:
+                    scale(1);
+            }
         }
 
-        @keyframes float {
+
+        @keyframes floating {
 
             0%, 100% {
-                transform: translateY(0);
+
+                transform:
+                    translateY(0);
             }
 
             50% {
-                transform: translateY(-12px);
-            }
 
+                transform:
+                    translateY(-12px);
+            }
         }
+
 
         @keyframes pawFloat {
 
             0% {
+
                 bottom: -50px;
+
                 opacity: 0;
-                transform: rotate(0deg);
+
+                transform:
+                    rotate(0deg);
             }
 
             20% {
-                opacity: 0.4;
+
+                opacity: 0.35;
             }
 
             80% {
-                opacity: 0.4;
+
+                opacity: 0.35;
             }
 
             100% {
-                bottom: 110%;
-                opacity: 0;
-                transform: rotate(180deg);
-            }
 
+                bottom: 110%;
+
+                opacity: 0;
+
+                transform:
+                    rotate(180deg);
+            }
         }
 
 
-        /* MOBILE */
+        @keyframes reportAppear {
 
-        @media (max-width: 600px) {
+            from {
 
-            h1 {
+                opacity: 0;
+
+                transform:
+                    translateY(50px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+
                 font-size: 38px;
             }
 
-            h1 span {
-                font-size: 22px;
+
+            .hero h1 span {
+
+                font-size: 20px;
             }
 
+
             .intro {
+
                 font-size: 16px;
+            }
+
+
+            .stats {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .report h1 {
+
+                font-size: 30px;
             }
 
         }
 
     </style>
+
 </head>
 
 
 <body>
 
 
-    <!-- FLOATING PAWS -->
+    <!-- FLOATING PAW PRINTS -->
 
     <div class="paw">🐾</div>
     <div class="paw">🐾</div>
@@ -235,7 +557,9 @@
     <div class="paw">🐾</div>
 
 
-    <!-- MAIN INTRO -->
+    <!-- =========================
+         OPENING
+    ========================= -->
 
     <section class="hero">
 
@@ -245,43 +569,235 @@
 
 
         <h1>
+
             Welcome, My Dear Crazy Cat Lady.
-            <span>🐾 You have been warned. 🐾</span>
+
+            <span>
+                🐾 You have been warned. 🐾
+            </span>
+
         </h1>
 
 
         <p class="intro">
+
             Yes... this entire website is about you.
+
             <br><br>
 
             I know.
+
             You probably didn't ask for this.
-            And honestly... neither did I.
-            😂
+
+            And honestly...
+
+            neither did I. 😂
 
             <br><br>
 
-            But somehow, here we are.
+            But somehow,
+
+            here we are.
+
         </p>
 
 
-        <button class="start-btn" onclick="startStory()">
+        <button
+            class="start-btn"
+            onclick="startStory()">
+
             Enter at your own risk 😂
+
         </button>
 
     </section>
 
 
+
+    <!-- =========================
+         CRAZY CAT LADY REPORT
+    ========================= -->
+
+    <section class="report">
+
+        <div class="report-box">
+
+
+            <div class="report-icon">
+                🐾
+            </div>
+
+
+            <h2>
+                THE OFFICIAL
+            </h2>
+
+
+            <h1>
+                CRAZY CAT LADY REPORT
+            </h1>
+
+
+            <p class="classified">
+
+                CLASSIFICATION:
+                FRIENDSHIP DEPARTMENT
+
+            </p>
+
+
+
+            <div class="stats">
+
+
+                <div class="stat">
+
+                    <span>
+                        🐈
+                    </span>
+
+                    <h3>
+                        Cat Obsession
+                    </h3>
+
+                    <p>
+                        97%
+                    </p>
+
+                </div>
+
+
+
+                <div class="stat">
+
+                    <span>
+                        🙄
+                    </span>
+
+                    <h3>
+                        Ability to Annoy Me
+                    </h3>
+
+                    <p>
+                        100%
+                    </p>
+
+                </div>
+
+
+
+                <div class="stat">
+
+                    <span>
+                        😂
+                    </span>
+
+                    <h3>
+                        Random Nonsense
+                    </h3>
+
+                    <p>
+                        ∞
+                    </p>
+
+                </div>
+
+
+
+                <div class="stat">
+
+                    <span>
+                        👑
+                    </span>
+
+                    <h3>
+                        Princess Behaviour
+                    </h3>
+
+                    <p>
+                        Highly Suspected
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <p class="report-text">
+
+                After extensive research,
+
+                several questionable conversations,
+
+                countless jokes,
+
+                and an unreasonable amount of evidence...
+
+                <br><br>
+
+                the results are unfortunately clear.
+
+            </p>
+
+
+
+            <h3 class="result">
+
+                The investigation has concluded.
+
+            </h3>
+
+
+
+            <p class="result-big">
+
+                YOU ARE OFFICIALLY MY BEST FRIEND. ❤️
+
+            </p>
+
+
+        </div>
+
+    </section>
+
+
+
     <script>
+
 
         function startStory() {
 
-            alert("You actually clicked it. I'm impressed. 😂");
+
+            /* Hide opening */
+
+            document.querySelector(".hero").style.display =
+                "none";
+
+
+            /* Show report */
+
+            document.querySelector(".report").style.display =
+                "flex";
+
+
+            /* Move page to the report */
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
 
         }
+
 
     </script>
 
 
 </body>
+
 </html>
