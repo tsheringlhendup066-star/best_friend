@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Crazy Cat Lady 🐾</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f1020;
+            color: white;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* MAIN SCREEN */
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+
+        .cat {
+            font-size: 70px;
+            margin-bottom: 20px;
+
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards,
+                       float 3s ease-in-out infinite 1.5s;
+        }
+
+        h1 {
+            font-size: 55px;
+            margin-bottom: 20px;
+
+            opacity: 0;
+            animation: titleAppear 2s ease forwards 1s;
+        }
+
+        h1 span {
+            display: block;
+            font-size: 28px;
+            margin-top: 12px;
+            font-weight: normal;
+            opacity: 0.8;
+        }
+
+        .intro {
+            max-width: 650px;
+            font-size: 19px;
+            line-height: 1.7;
+
+            opacity: 0;
+            animation: fadeIn 2s ease forwards 2.5s;
+        }
+
+        .start-btn {
+            margin-top: 35px;
+            padding: 15px 32px;
+
+            border: none;
+            border-radius: 30px;
+
+            font-size: 16px;
+            cursor: pointer;
+
+            background: white;
+            color: #0f1020;
+
+            opacity: 0;
+            animation: fadeIn 2s ease forwards 4s;
+
+            transition: 0.3s;
+        }
+
+        .start-btn:hover {
+            transform: scale(1.1);
+        }
+
+
+        /* FLOATING PAW PRINTS */
+
+        .paw {
+            position: absolute;
+            font-size: 28px;
+            opacity: 0;
+
+            animation: pawFloat linear infinite;
+        }
+
+        .paw:nth-child(1) {
+            left: 10%;
+            animation-duration: 8s;
+            animation-delay: 1s;
+        }
+
+        .paw:nth-child(2) {
+            left: 25%;
+            animation-duration: 10s;
+            animation-delay: 3s;
+        }
+
+        .paw:nth-child(3) {
+            left: 45%;
+            animation-duration: 7s;
+            animation-delay: 0s;
+        }
+
+        .paw:nth-child(4) {
+            left: 65%;
+            animation-duration: 11s;
+            animation-delay: 2s;
+        }
+
+        .paw:nth-child(5) {
+            left: 82%;
+            animation-duration: 9s;
+            animation-delay: 4s;
+        }
+
+
+        /* ANIMATIONS */
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        @keyframes titleAppear {
+
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+        }
+
+        @keyframes float {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+        }
+
+        @keyframes pawFloat {
+
+            0% {
+                bottom: -50px;
+                opacity: 0;
+                transform: rotate(0deg);
+            }
+
+            20% {
+                opacity: 0.4;
+            }
+
+            80% {
+                opacity: 0.4;
+            }
+
+            100% {
+                bottom: 110%;
+                opacity: 0;
+                transform: rotate(180deg);
+            }
+
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            h1 {
+                font-size: 38px;
+            }
+
+            h1 span {
+                font-size: 22px;
+            }
+
+            .intro {
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- FLOATING PAWS -->
+
+    <div class="paw">🐾</div>
+    <div class="paw">🐾</div>
+    <div class="paw">🐾</div>
+    <div class="paw">🐾</div>
+    <div class="paw">🐾</div>
+
+
+    <!-- MAIN INTRO -->
+
+    <section class="hero">
+
+        <div class="cat">
+            🐈‍⬛
+        </div>
+
+
+        <h1>
+            Welcome, My Dear Crazy Cat Lady.
+            <span>🐾 You have been warned. 🐾</span>
+        </h1>
+
+
+        <p class="intro">
+            Yes... this entire website is about you.
+            <br><br>
+
+            I know.
+            You probably didn't ask for this.
+            And honestly... neither did I.
+            😂
+
+            <br><br>
+
+            But somehow, here we are.
+        </p>
+
+
+        <button class="start-btn" onclick="startStory()">
+            Enter at your own risk 😂
+        </button>
+
+    </section>
+
+
+    <script>
+
+        function startStory() {
+
+            alert("You actually clicked it. I'm impressed. 😂");
+
+        }
+
+    </script>
+
+
+</body>
+</html>
