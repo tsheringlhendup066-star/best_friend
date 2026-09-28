@@ -16,6 +16,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background: #0b0b14;
@@ -25,7 +29,7 @@
 
 
         /* =========================
-           OPENING PAGE
+           OPENING
         ========================= */
 
         .hero {
@@ -44,8 +48,8 @@
 
             background:
                 radial-gradient(circle at center,
-                #24213d 0%,
-                #0b0b14 65%);
+                #292640 0%,
+                #0b0b14 70%);
         }
 
 
@@ -157,51 +161,36 @@
 
 
         .paw:nth-child(1) {
-
             left: 10%;
-
             animation-duration: 9s;
-
             animation-delay: 1s;
         }
 
 
         .paw:nth-child(2) {
-
             left: 25%;
-
             animation-duration: 11s;
-
             animation-delay: 3s;
         }
 
 
         .paw:nth-child(3) {
-
             left: 45%;
-
             animation-duration: 8s;
-
             animation-delay: 0s;
         }
 
 
         .paw:nth-child(4) {
-
             left: 65%;
-
             animation-duration: 10s;
-
             animation-delay: 2s;
         }
 
 
         .paw:nth-child(5) {
-
             left: 82%;
-
             animation-duration: 12s;
-
             animation-delay: 4s;
         }
 
@@ -222,7 +211,7 @@
 
             text-align: center;
 
-            padding: 40px 20px;
+            padding: 60px 20px;
 
             background:
                 radial-gradient(circle at center,
@@ -256,9 +245,7 @@
 
 
         .report-icon {
-
             font-size: 60px;
-
             margin-bottom: 15px;
         }
 
@@ -294,8 +281,6 @@
             margin-bottom: 40px;
         }
 
-
-        /* STATISTICS */
 
         .stats {
 
@@ -333,7 +318,6 @@
 
 
         .stat span {
-
             font-size: 32px;
         }
 
@@ -389,6 +373,183 @@
 
 
         /* =========================
+           CRIMES SECTION
+        ========================= */
+
+        .crimes {
+
+            min-height: 100vh;
+
+            padding: 90px 20px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #0b0b14,
+                    #171528
+                );
+        }
+
+
+        .section-label {
+
+            font-size: 13px;
+
+            letter-spacing: 5px;
+
+            opacity: 0.45;
+
+            margin-bottom: 15px;
+        }
+
+
+        .crimes h1 {
+
+            font-size: 45px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .crimes-intro {
+
+            max-width: 650px;
+
+            margin: auto;
+
+            line-height: 1.7;
+
+            opacity: 0.7;
+
+            margin-bottom: 50px;
+        }
+
+
+        .crime-grid {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .crime-card {
+
+            text-align: left;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255,255,255,0.05);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            transition: 0.3s;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .crime-card:hover {
+
+            transform: translateY(-7px);
+
+            background:
+                rgba(255,255,255,0.08);
+        }
+
+
+        .crime-number {
+
+            position: absolute;
+
+            top: 15px;
+
+            right: 20px;
+
+            font-size: 12px;
+
+            opacity: 0.25;
+        }
+
+
+        .crime-icon {
+
+            font-size: 38px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .crime-card h2 {
+
+            font-size: 20px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .crime-card p {
+
+            line-height: 1.7;
+
+            opacity: 0.7;
+
+            font-size: 15px;
+        }
+
+
+        .verdict {
+
+            max-width: 700px;
+
+            margin: 60px auto 0;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255,255,255,0.04);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+        }
+
+
+        .verdict p {
+
+            line-height: 1.8;
+
+            opacity: 0.75;
+        }
+
+
+        .verdict strong {
+
+            display: block;
+
+            margin-top: 15px;
+
+            font-size: 22px;
+        }
+
+
+        /* =========================
            ANIMATIONS
         ========================= */
 
@@ -435,13 +596,11 @@
         @keyframes floating {
 
             0%, 100% {
-
                 transform:
                     translateY(0);
             }
 
             50% {
-
                 transform:
                     translateY(-12px);
             }
@@ -461,12 +620,10 @@
             }
 
             20% {
-
                 opacity: 0.35;
             }
 
             80% {
-
                 opacity: 0.35;
             }
 
@@ -509,19 +666,16 @@
         @media (max-width: 700px) {
 
             .hero h1 {
-
                 font-size: 38px;
             }
 
 
             .hero h1 span {
-
                 font-size: 20px;
             }
 
 
             .intro {
-
                 font-size: 16px;
             }
 
@@ -534,8 +688,19 @@
 
 
             .report h1 {
-
                 font-size: 30px;
+            }
+
+
+            .crimes h1 {
+                font-size: 32px;
+            }
+
+
+            .crime-grid {
+
+                grid-template-columns:
+                    1fr;
             }
 
         }
@@ -548,7 +713,7 @@
 <body>
 
 
-    <!-- FLOATING PAW PRINTS -->
+    <!-- FLOATING PAWS -->
 
     <div class="paw">🐾</div>
     <div class="paw">🐾</div>
@@ -646,15 +811,12 @@
             </p>
 
 
-
             <div class="stats">
 
 
                 <div class="stat">
 
-                    <span>
-                        🐈
-                    </span>
+                    <span>🐈</span>
 
                     <h3>
                         Cat Obsession
@@ -667,12 +829,9 @@
                 </div>
 
 
-
                 <div class="stat">
 
-                    <span>
-                        🙄
-                    </span>
+                    <span>🙄</span>
 
                     <h3>
                         Ability to Annoy Me
@@ -685,12 +844,9 @@
                 </div>
 
 
-
                 <div class="stat">
 
-                    <span>
-                        😂
-                    </span>
+                    <span>😂</span>
 
                     <h3>
                         Random Nonsense
@@ -703,12 +859,9 @@
                 </div>
 
 
-
                 <div class="stat">
 
-                    <span>
-                        👑
-                    </span>
+                    <span>👑</span>
 
                     <h3>
                         Princess Behaviour
@@ -722,7 +875,6 @@
 
 
             </div>
-
 
 
             <p class="report-text">
@@ -742,13 +894,11 @@
             </p>
 
 
-
             <h3 class="result">
 
                 The investigation has concluded.
 
             </h3>
-
 
 
             <p class="result-big">
@@ -764,32 +914,327 @@
 
 
 
+    <!-- =========================
+         HER CRIMES
+    ========================= -->
+
+    <section class="crimes">
+
+
+        <p class="section-label">
+            CASE FILE #03
+        </p>
+
+
+        <h1>
+            THE OFFICIAL LIST OF HER CRIMES 😂
+        </h1>
+
+
+        <p class="crimes-intro">
+
+            After further investigation, the authorities have
+            discovered several highly questionable behaviours.
+
+            The following charges have been documented.
+
+        </p>
+
+
+
+        <div class="crime-grid">
+
+
+            <!-- CRIME 01 -->
+
+            <div class="crime-card">
+
+                <span class="crime-number">
+                    CHARGE #001
+                </span>
+
+                <div class="crime-icon">
+                    🤐
+                </div>
+
+                <h2>
+                    Excessive Use of “Shut Up”
+                </h2>
+
+                <p>
+
+                    Whenever the situation becomes even slightly
+                    embarrassing, awkward, or simply too true...
+
+                    <br><br>
+
+                    <strong>“Shut up.”</strong>
+
+                    <br><br>
+
+                    Apparently this is her universal response.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- CRIME 02 -->
+
+            <div class="crime-card">
+
+                <span class="crime-number">
+                    CHARGE #002
+                </span>
+
+                <div class="crime-icon">
+                    🤨
+                </div>
+
+                <h2>
+                    Chronic Cluelessness
+                </h2>
+
+                <p>
+
+                    There are moments when you genuinely wonder
+                    how someone can be this clueless.
+
+                    <br><br>
+
+                    Yet somehow...
+
+                    she continues to survive.
+
+                    <br><br>
+
+                    Scientists remain confused.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- CRIME 03 -->
+
+            <div class="crime-card">
+
+                <span class="crime-number">
+                    CHARGE #003
+                </span>
+
+                <div class="crime-icon">
+                    👀
+                </div>
+
+                <h2>
+                    Suspicious Staring
+                </h2>
+
+                <p>
+
+                    Randomly staring at other people like she's
+                    conducting a full investigation.
+
+                    <br><br>
+
+                    No explanation.
+
+                    No warning.
+
+                    Just...
+
+                    <strong>👁️👁️</strong>
+
+                    <br><br>
+
+                    Extremely suspicious behaviour.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- CRIME 04 -->
+
+            <div class="crime-card">
+
+                <span class="crime-number">
+                    CHARGE #004
+                </span>
+
+                <div class="crime-icon">
+                    🧌
+                </div>
+
+                <h2>
+                    Being a Short Gremlin
+                </h2>
+
+                <p>
+
+                    Height: questionable.
+
+                    <br>
+
+                    Attitude: enormous.
+
+                    <br><br>
+
+                    Somehow this tiny human has
+                    the confidence of someone twice her size.
+
+                    <br><br>
+
+                    A dangerous combination.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- CRIME 05 -->
+
+            <div class="crime-card">
+
+                <span class="crime-number">
+                    CHARGE #005
+                </span>
+
+                <div class="crime-icon">
+                    📱
+                </div>
+
+                <h2>
+                    Mistaking Random People For Me
+                </h2>
+
+                <p>
+
+                    Looking at her phone...
+
+                    talking to someone...
+
+                    completely convinced it's me...
+
+                    <br><br>
+
+                    only to realize...
+
+                    <strong>it wasn't me. 😂</strong>
+
+                    <br><br>
+
+                    This has officially been entered
+                    into the evidence archive.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- FINAL CRIME -->
+
+            <div class="crime-card">
+
+                <span class="crime-number">
+                    CHARGE #006
+                </span>
+
+                <div class="crime-icon">
+                    🐈‍⬛
+                </div>
+
+                <h2>
+                    Being the Crazy Cat Lady
+                </h2>
+
+                <p>
+
+                    No further explanation required.
+
+                    <br><br>
+
+                    The evidence speaks for itself.
+
+                    <br><br>
+
+                    <strong>🐈 + 👑 + chaos = her</strong>
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- VERDICT -->
+
+        <div class="verdict">
+
+            <p>
+
+                After reviewing all available evidence,
+                the investigation should probably end here.
+
+                <br><br>
+
+                Unfortunately...
+
+                I have one major problem.
+
+            </p>
+
+
+            <strong>
+
+                Despite ALL of this...
+
+                you're still my favourite short gremlin. ❤️
+
+            </strong>
+
+        </div>
+
+
+    </section>
+
+
+
     <script>
 
 
         function startStory() {
 
-
-            /* Hide opening */
+            /* Hide the opening */
 
             document.querySelector(".hero").style.display =
                 "none";
 
 
-            /* Show report */
+            /* Show the report */
 
             document.querySelector(".report").style.display =
                 "flex";
 
 
-            /* Move page to the report */
+            /* Show the next section too */
 
-            window.scrollTo({
+            document.querySelector(".crimes").style.display =
+                "block";
 
-                top: 0,
 
+            /* Start at the report */
+
+            document.querySelector(".report").scrollIntoView({
                 behavior: "smooth"
-
             });
 
         }
