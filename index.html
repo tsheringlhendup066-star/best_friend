@@ -1,1248 +1,333 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Favorite Gremlin 😂</title>
 
-    <title>For My Crazy Cat Lady 🐈‍⬛</title>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-    <style>
+    html {
+        scroll-behavior: smooth;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+        color: white;
+        text-align: center;
+        overflow-x: hidden;
+    }
+
+    section {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+        position: relative;
+    }
+
+    h1 {
+        font-size: 45px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 20px;
+        line-height: 1.6;
+        max-width: 700px;
+        margin: 10px auto;
+    }
+
+    .emoji {
+        font-size: 70px;
+        margin-bottom: 20px;
+    }
+
+    /* Scroll instruction */
+    .scroll-hint {
+        position: fixed;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        animation: bounce 1.5s infinite;
+        z-index: 999;
+        background: rgba(0,0,0,0.35);
+        padding: 10px 18px;
+        border-radius: 25px;
+    }
+
+    @keyframes bounce {
+        0%, 100% {
+            transform: translate(-50%, 0);
         }
 
-        html {
-            scroll-behavior: smooth;
+        50% {
+            transform: translate(-50%, 10px);
+        }
+    }
+
+    .button {
+        margin-top: 25px;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 30px;
+        background: white;
+        color: #16213e;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .button:hover {
+        transform: scale(1.1);
+    }
+
+    .card {
+        background: rgba(255,255,255,0.1);
+        padding: 30px;
+        border-radius: 25px;
+        max-width: 750px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .question {
+        margin: 15px 0;
+        padding: 18px;
+        background: rgba(255,255,255,0.08);
+        border-radius: 15px;
+        font-size: 20px;
+    }
+
+    .heart {
+        font-size: 80px;
+        animation: heartbeat 1.2s infinite;
+    }
+
+    @keyframes heartbeat {
+        0% {
+            transform: scale(1);
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #0b0b14;
-            color: white;
-            overflow-x: hidden;
+        50% {
+            transform: scale(1.2);
         }
 
-
-        /* =========================
-           OPENING
-        ========================= */
-
-        .hero {
-            min-height: 100vh;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            text-align: center;
-
-            padding: 30px;
-
-            position: relative;
-
-            background:
-                radial-gradient(circle at center,
-                #292640 0%,
-                #0b0b14 70%);
+        100% {
+            transform: scale(1);
         }
+    }
 
+    .hidden-message {
+        display: none;
+        margin-top: 25px;
+        font-size: 22px;
+        animation: fadeIn 1s ease;
+    }
 
-        .cat {
-            font-size: 75px;
-
+    @keyframes fadeIn {
+        from {
             opacity: 0;
-
-            animation:
-                fadeIn 1.5s ease forwards,
-                floating 3s ease-in-out infinite 1.5s;
         }
 
-
-        .hero h1 {
-
-            font-size: 55px;
-
-            margin-top: 20px;
-            margin-bottom: 15px;
-
-            opacity: 0;
-
-            animation:
-                titleAppear 1.5s ease forwards 1s;
+        to {
+            opacity: 1;
         }
-
-
-        .hero h1 span {
-
-            display: block;
-
-            font-size: 24px;
-
-            font-weight: normal;
-
-            margin-top: 15px;
-
-            opacity: 0.7;
-        }
-
-
-        .intro {
-
-            max-width: 650px;
-
-            font-size: 18px;
-
-            line-height: 1.8;
-
-            opacity: 0;
-
-            animation:
-                fadeIn 2s ease forwards 2.5s;
-        }
-
-
-        .start-btn {
-
-            margin-top: 35px;
-
-            padding: 15px 32px;
-
-            border: none;
-
-            border-radius: 30px;
-
-            background: white;
-
-            color: #111;
-
-            font-size: 16px;
-
-            cursor: pointer;
-
-            opacity: 0;
-
-            animation:
-                fadeIn 2s ease forwards 4s;
-
-            transition: 0.3s;
-        }
-
-
-        .start-btn:hover {
-
-            transform: scale(1.08);
-
-            box-shadow:
-                0 10px 30px rgba(255,255,255,0.2);
-        }
-
-
-        /* =========================
-           FLOATING PAWS
-        ========================= */
-
-        .paw {
-
-            position: absolute;
-
-            font-size: 28px;
-
-            opacity: 0;
-
-            animation:
-                pawFloat linear infinite;
-        }
-
-
-        .paw:nth-child(1) {
-            left: 10%;
-            animation-duration: 9s;
-            animation-delay: 1s;
-        }
-
-
-        .paw:nth-child(2) {
-            left: 25%;
-            animation-duration: 11s;
-            animation-delay: 3s;
-        }
-
-
-        .paw:nth-child(3) {
-            left: 45%;
-            animation-duration: 8s;
-            animation-delay: 0s;
-        }
-
-
-        .paw:nth-child(4) {
-            left: 65%;
-            animation-duration: 10s;
-            animation-delay: 2s;
-        }
-
-
-        .paw:nth-child(5) {
-            left: 82%;
-            animation-duration: 12s;
-            animation-delay: 4s;
-        }
-
-
-        /* =========================
-           CRAZY CAT LADY REPORT
-        ========================= */
-
-        .report {
-
-            min-height: 100vh;
-
-            display: none;
-
-            justify-content: center;
-
-            align-items: center;
-
-            text-align: center;
-
-            padding: 60px 20px;
-
-            background:
-                radial-gradient(circle at center,
-                #292641 0%,
-                #0b0b14 70%);
-        }
-
-
-        .report-box {
-
-            width: 100%;
-
-            max-width: 900px;
-
-            padding: 50px 30px;
-
-            border-radius: 25px;
-
-            background:
-                rgba(255,255,255,0.05);
-
-            border:
-                1px solid rgba(255,255,255,0.12);
-
-            box-shadow:
-                0 20px 70px rgba(0,0,0,0.5);
-
-            animation:
-                reportAppear 1s ease;
-        }
-
-
-        .report-icon {
-            font-size: 60px;
-            margin-bottom: 15px;
-        }
-
-
-        .report h2 {
-
-            font-size: 15px;
-
-            letter-spacing: 5px;
-
-            opacity: 0.55;
-        }
-
-
-        .report h1 {
-
-            font-size: 42px;
-
-            margin-top: 10px;
-
-            margin-bottom: 10px;
-        }
-
-
-        .classified {
-
-            font-size: 11px;
-
-            letter-spacing: 3px;
-
-            opacity: 0.45;
-
-            margin-bottom: 40px;
-        }
-
-
-        .stats {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            gap: 15px;
-
-            margin-bottom: 40px;
-        }
-
-
-        .stat {
-
-            padding: 25px 12px;
-
-            border-radius: 18px;
-
-            background:
-                rgba(255,255,255,0.06);
-
-            transition: 0.3s;
-        }
-
-
-        .stat:hover {
-
-            transform: translateY(-8px);
-
-            background:
-                rgba(255,255,255,0.1);
-        }
-
-
-        .stat span {
-            font-size: 32px;
-        }
-
-
-        .stat h3 {
-
-            font-size: 14px;
-
-            margin-top: 12px;
-
-            margin-bottom: 10px;
-        }
-
-
-        .stat p {
-
-            font-size: 21px;
-
-            font-weight: bold;
-        }
-
-
-        .report-text {
-
-            max-width: 650px;
-
-            margin: auto;
-
-            line-height: 1.8;
-
-            opacity: 0.75;
-
-            font-size: 16px;
-        }
-
-
-        .result {
-
-            margin-top: 30px;
-
-            font-size: 21px;
-        }
-
-
-        .result-big {
-
-            margin-top: 15px;
-
-            font-size: 25px;
-
-            font-weight: bold;
-        }
-
-
-        /* =========================
-           CRIMES SECTION
-        ========================= */
-
-        .crimes {
-
-            min-height: 100vh;
-
-            padding: 90px 20px;
-
-            text-align: center;
-
-            background:
-                linear-gradient(
-                    180deg,
-                    #0b0b14,
-                    #171528
-                );
-        }
-
-
-        .section-label {
-
-            font-size: 13px;
-
-            letter-spacing: 5px;
-
-            opacity: 0.45;
-
-            margin-bottom: 15px;
-        }
-
-
-        .crimes h1 {
-
-            font-size: 45px;
-
-            margin-bottom: 15px;
-        }
-
-
-        .crimes-intro {
-
-            max-width: 650px;
-
-            margin: auto;
-
-            line-height: 1.7;
-
-            opacity: 0.7;
-
-            margin-bottom: 50px;
-        }
-
-
-        .crime-grid {
-
-            max-width: 1000px;
-
-            margin: auto;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 20px;
-        }
-
-
-        .crime-card {
-
-            text-align: left;
-
-            padding: 30px;
-
-            border-radius: 20px;
-
-            background:
-                rgba(255,255,255,0.05);
-
-            border:
-                1px solid rgba(255,255,255,0.08);
-
-            transition: 0.3s;
-
-            position: relative;
-
-            overflow: hidden;
-        }
-
-
-        .crime-card:hover {
-
-            transform: translateY(-7px);
-
-            background:
-                rgba(255,255,255,0.08);
-        }
-
-
-        .crime-number {
-
-            position: absolute;
-
-            top: 15px;
-
-            right: 20px;
-
-            font-size: 12px;
-
-            opacity: 0.25;
-        }
-
-
-        .crime-icon {
-
-            font-size: 38px;
-
-            margin-bottom: 15px;
-        }
-
-
-        .crime-card h2 {
-
-            font-size: 20px;
-
-            margin-bottom: 12px;
-        }
-
-
-        .crime-card p {
-
-            line-height: 1.7;
-
-            opacity: 0.7;
-
-            font-size: 15px;
-        }
-
-
-        .verdict {
-
-            max-width: 700px;
-
-            margin: 60px auto 0;
-
-            padding: 30px;
-
-            border-radius: 20px;
-
-            background:
-                rgba(255,255,255,0.04);
-
-            border:
-                1px solid rgba(255,255,255,0.08);
-        }
-
-
-        .verdict p {
-
-            line-height: 1.8;
-
-            opacity: 0.75;
-        }
-
-
-        .verdict strong {
-
-            display: block;
-
-            margin-top: 15px;
-
-            font-size: 22px;
-        }
-
-
-        /* =========================
-           ANIMATIONS
-        ========================= */
-
-        @keyframes fadeIn {
-
-            from {
-
-                opacity: 0;
-
-                transform:
-                    translateY(25px);
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform:
-                    translateY(0);
-            }
-        }
-
-
-        @keyframes titleAppear {
-
-            from {
-
-                opacity: 0;
-
-                transform:
-                    scale(0.8);
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform:
-                    scale(1);
-            }
-        }
-
-
-        @keyframes floating {
-
-            0%, 100% {
-                transform:
-                    translateY(0);
-            }
-
-            50% {
-                transform:
-                    translateY(-12px);
-            }
-        }
-
-
-        @keyframes pawFloat {
-
-            0% {
-
-                bottom: -50px;
-
-                opacity: 0;
-
-                transform:
-                    rotate(0deg);
-            }
-
-            20% {
-                opacity: 0.35;
-            }
-
-            80% {
-                opacity: 0.35;
-            }
-
-            100% {
-
-                bottom: 110%;
-
-                opacity: 0;
-
-                transform:
-                    rotate(180deg);
-            }
-        }
-
-
-        @keyframes reportAppear {
-
-            from {
-
-                opacity: 0;
-
-                transform:
-                    translateY(50px);
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform:
-                    translateY(0);
-            }
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 700px) {
-
-            .hero h1 {
-                font-size: 38px;
-            }
-
-
-            .hero h1 span {
-                font-size: 20px;
-            }
-
-
-            .intro {
-                font-size: 16px;
-            }
-
-
-            .stats {
-
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-
-            .report h1 {
-                font-size: 30px;
-            }
-
-
-            .crimes h1 {
-                font-size: 32px;
-            }
-
-
-            .crime-grid {
-
-                grid-template-columns:
-                    1fr;
-            }
-
-        }
-
-    </style>
-
+    }
+</style>
 </head>
-
 
 <body>
 
-
-    <!-- FLOATING PAWS -->
-
-    <div class="paw">🐾</div>
-    <div class="paw">🐾</div>
-    <div class="paw">🐾</div>
-    <div class="paw">🐾</div>
-    <div class="paw">🐾</div>
+<!-- SCROLL INSTRUCTION -->
+<div class="scroll-hint">
+    ↓ Scroll Down ↓
+</div>
 
 
-    <!-- =========================
-         OPENING
-    ========================= -->
+<!-- SECTION 1 -->
+<section>
 
-    <section class="hero">
+    <div class="emoji">👀</div>
 
-        <div class="cat">
-            🐈‍⬛
+    <h1>Hey You...</h1>
+
+    <p>
+        Yes, you. The short little gremlin who somehow became
+        one of the most important people in my life. 😂
+    </p>
+
+    <p>
+        Before you judge me for making this...
+        just keep scrolling.
+    </p>
+
+</section>
+
+
+<!-- SECTION 2 -->
+<section>
+
+    <div class="card">
+
+        <h2>Things You Somehow Do 😂</h2>
+
+        <div class="question">
+            🗣️ You always say "SHUT UP"
         </div>
 
+        <div class="question">
+            🤨 You can be completely clueless sometimes
+        </div>
 
-        <h1>
+        <div class="question">
+            👀 You stare at other people like you're investigating a crime
+        </div>
 
-            Welcome, My Dear Crazy Cat Lady.
+        <div class="question">
+            📱 You look at your phone while I'm talking
+        </div>
 
-            <span>
-                🐾 You have been warned. 🐾
-            </span>
+        <div class="question">
+            🧍‍♀️ You're ridiculously short
+        </div>
 
-        </h1>
+        <div class="question">
+            😂 And somehow... I still tolerate you
+        </div>
+
+    </div>
+
+</section>
 
 
-        <p class="intro">
+<!-- SECTION 3 -->
+<section>
 
-            Yes... this entire website is about you.
+    <div class="emoji">🤦‍♂️</div>
 
-            <br><br>
+    <h2>The Funniest Part</h2>
 
-            I know.
+    <p>
+        Sometimes you're looking at someone else,
+        and I'll start talking to you thinking you're looking at me.
+    </p>
 
-            You probably didn't ask for this.
+    <p>
+        Then I realize...
+        you're not even talking to me. 💀
+    </p>
 
-            And honestly...
+    <p>
+        And somehow I still do it again.
+    </p>
 
-            neither did I. 😂
+</section>
 
-            <br><br>
 
-            But somehow,
+<!-- SECTION 4 -->
+<section>
 
-            here we are.
+    <div class="card">
 
+        <h2>But Seriously...</h2>
+
+        <p>
+            Behind all the jokes, teasing, random "shut ups",
+            clueless moments and your tiny gremlin behavior...
         </p>
 
-
-        <button
-            class="start-btn"
-            onclick="startStory()">
-
-            Enter at your own risk 😂
-
-        </button>
-
-    </section>
-
-
-
-    <!-- =========================
-         CRAZY CAT LADY REPORT
-    ========================= -->
-
-    <section class="report">
-
-        <div class="report-box">
-
-
-            <div class="report-icon">
-                🐾
-            </div>
-
-
-            <h2>
-                THE OFFICIAL
-            </h2>
-
-
-            <h1>
-                CRAZY CAT LADY REPORT
-            </h1>
-
-
-            <p class="classified">
-
-                CLASSIFICATION:
-                FRIENDSHIP DEPARTMENT
-
-            </p>
-
-
-            <div class="stats">
-
-
-                <div class="stat">
-
-                    <span>🐈</span>
-
-                    <h3>
-                        Cat Obsession
-                    </h3>
-
-                    <p>
-                        97%
-                    </p>
-
-                </div>
-
-
-                <div class="stat">
-
-                    <span>🙄</span>
-
-                    <h3>
-                        Ability to Annoy Me
-                    </h3>
-
-                    <p>
-                        100%
-                    </p>
-
-                </div>
-
-
-                <div class="stat">
-
-                    <span>😂</span>
-
-                    <h3>
-                        Random Nonsense
-                    </h3>
-
-                    <p>
-                        ∞
-                    </p>
-
-                </div>
-
-
-                <div class="stat">
-
-                    <span>👑</span>
-
-                    <h3>
-                        Princess Behaviour
-                    </h3>
-
-                    <p>
-                        Highly Suspected
-                    </p>
-
-                </div>
-
-
-            </div>
-
-
-            <p class="report-text">
-
-                After extensive research,
-
-                several questionable conversations,
-
-                countless jokes,
-
-                and an unreasonable amount of evidence...
-
-                <br><br>
-
-                the results are unfortunately clear.
-
-            </p>
-
-
-            <h3 class="result">
-
-                The investigation has concluded.
-
-            </h3>
-
-
-            <p class="result-big">
-
-                YOU ARE OFFICIALLY MY BEST FRIEND. ❤️
-
-            </p>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         HER CRIMES
-    ========================= -->
-
-    <section class="crimes">
-
-
-        <p class="section-label">
-            CASE FILE #03
+        <p>
+            I'm genuinely glad I met you.
         </p>
 
-
-        <h1>
-            THE OFFICIAL LIST OF HER CRIMES 😂
-        </h1>
-
-
-        <p class="crimes-intro">
-
-            After further investigation, the authorities have
-            discovered several highly questionable behaviours.
-
-            The following charges have been documented.
-
+        <p>
+            You became someone I can talk to,
+            laugh with, and just be myself around.
         </p>
 
+    </div>
 
+</section>
 
-        <div class="crime-grid">
 
+<!-- SECTION 5 -->
+<section>
 
-            <!-- CRIME 01 -->
+    <div class="heart">❤️</div>
 
-            <div class="crime-card">
+    <h2>One Thing I Hope You Know</h2>
 
-                <span class="crime-number">
-                    CHARGE #001
-                </span>
+    <p>
+        You don't have to do anything special to be important.
+    </p>
 
-                <div class="crime-icon">
-                    🤐
-                </div>
+    <p>
+        Just being yourself is already enough.
+    </p>
 
-                <h2>
-                    Excessive Use of “Shut Up”
-                </h2>
+    <button class="button" onclick="showMessage()">
+        Click Me
+    </button>
 
-                <p>
+    <div id="message" class="hidden-message">
+        And yes... you're still a short gremlin. 😂❤️
+    </div>
 
-                    Whenever the situation becomes even slightly
-                    embarrassing, awkward, or simply too true...
+</section>
 
-                    <br><br>
 
-                    <strong>“Shut up.”</strong>
+<!-- SECTION 6 -->
+<section>
 
-                    <br><br>
+    <div class="emoji">🌙✨</div>
 
-                    Apparently this is her universal response.
+    <h2>Thank You</h2>
 
-                </p>
+    <p>
+        Thank you for the random conversations,
+        the stupid jokes, the GIFs, the teasing,
+        and all the little moments.
+    </p>
 
-            </div>
+    <p>
+        Life is a little more fun with you around.
+    </p>
 
+    <h2>Stay the same, Princess. ❤️</h2>
 
+</section>
 
-            <!-- CRIME 02 -->
 
-            <div class="crime-card">
+<script>
 
-                <span class="crime-number">
-                    CHARGE #002
-                </span>
+function showMessage() {
 
-                <div class="crime-icon">
-                    🤨
-                </div>
+    document.getElementById("message").style.display = "block";
 
-                <h2>
-                    Chronic Cluelessness
-                </h2>
+}
 
-                <p>
-
-                    There are moments when you genuinely wonder
-                    how someone can be this clueless.
-
-                    <br><br>
-
-                    Yet somehow...
-
-                    she continues to survive.
-
-                    <br><br>
-
-                    Scientists remain confused.
-
-                </p>
-
-            </div>
-
-
-
-            <!-- CRIME 03 -->
-
-            <div class="crime-card">
-
-                <span class="crime-number">
-                    CHARGE #003
-                </span>
-
-                <div class="crime-icon">
-                    👀
-                </div>
-
-                <h2>
-                    Suspicious Staring
-                </h2>
-
-                <p>
-
-                    Randomly staring at other people like she's
-                    conducting a full investigation.
-
-                    <br><br>
-
-                    No explanation.
-
-                    No warning.
-
-                    Just...
-
-                    <strong>👁️👁️</strong>
-
-                    <br><br>
-
-                    Extremely suspicious behaviour.
-
-                </p>
-
-            </div>
-
-
-
-            <!-- CRIME 04 -->
-
-            <div class="crime-card">
-
-                <span class="crime-number">
-                    CHARGE #004
-                </span>
-
-                <div class="crime-icon">
-                    🧌
-                </div>
-
-                <h2>
-                    Being a Short Gremlin
-                </h2>
-
-                <p>
-
-                    Height: questionable.
-
-                    <br>
-
-                    Attitude: enormous.
-
-                    <br><br>
-
-                    Somehow this tiny human has
-                    the confidence of someone twice her size.
-
-                    <br><br>
-
-                    A dangerous combination.
-
-                </p>
-
-            </div>
-
-
-
-            <!-- CRIME 05 -->
-
-            <div class="crime-card">
-
-                <span class="crime-number">
-                    CHARGE #005
-                </span>
-
-                <div class="crime-icon">
-                    📱
-                </div>
-
-                <h2>
-                    Mistaking Random People For Me
-                </h2>
-
-                <p>
-
-                    Looking at her phone...
-
-                    talking to someone...
-
-                    completely convinced it's me...
-
-                    <br><br>
-
-                    only to realize...
-
-                    <strong>it wasn't me. 😂</strong>
-
-                    <br><br>
-
-                    This has officially been entered
-                    into the evidence archive.
-
-                </p>
-
-            </div>
-
-
-
-            <!-- FINAL CRIME -->
-
-            <div class="crime-card">
-
-                <span class="crime-number">
-                    CHARGE #006
-                </span>
-
-                <div class="crime-icon">
-                    🐈‍⬛
-                </div>
-
-                <h2>
-                    Being the Crazy Cat Lady
-                </h2>
-
-                <p>
-
-                    No further explanation required.
-
-                    <br><br>
-
-                    The evidence speaks for itself.
-
-                    <br><br>
-
-                    <strong>🐈 + 👑 + chaos = her</strong>
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- VERDICT -->
-
-        <div class="verdict">
-
-            <p>
-
-                After reviewing all available evidence,
-                the investigation should probably end here.
-
-                <br><br>
-
-                Unfortunately...
-
-                I have one major problem.
-
-            </p>
-
-
-            <strong>
-
-                Despite ALL of this...
-
-                you're still my favourite short gremlin. ❤️
-
-            </strong>
-
-        </div>
-
-
-    </section>
-
-
-
-    <script>
-
-
-        function startStory() {
-
-            /* Hide the opening */
-
-            document.querySelector(".hero").style.display =
-                "none";
-
-
-            /* Show the report */
-
-            document.querySelector(".report").style.display =
-                "flex";
-
-
-            /* Show the next section too */
-
-            document.querySelector(".crimes").style.display =
-                "block";
-
-
-            /* Start at the report */
-
-            document.querySelector(".report").scrollIntoView({
-                behavior: "smooth"
-            });
-
-        }
-
-
-    </script>
-
+</script>
 
 </body>
-
 </html>
+```
